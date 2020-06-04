@@ -7,19 +7,17 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark mb-5">
+            <nav className="navbar navbar-expand-lg navbar-dark mb-3">
                 <div className="container">
                     {/* <Link className="fish" to={"/"}><FontAwesomeIcon icon={faHome} size='3x' /></Link> */}
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to={"/"}>Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={"/Login"}>Login</Link>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/"}>Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/Login"}>Login</Link>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         );

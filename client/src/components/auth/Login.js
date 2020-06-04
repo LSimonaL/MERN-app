@@ -52,7 +52,7 @@ class Login extends Component {
     render() {
         const { errors } = this.state;
         return (
-            <div className="container mt-5">
+            <div className="container">
                 <div className="auth-wrapper auth-inner">
 
                     <form noValidate onSubmit={this.onSubmit}>

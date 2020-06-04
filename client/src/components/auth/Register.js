@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
@@ -52,7 +52,7 @@ class Register extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="container mt-5">
+            <div className="container">
                 <div className="auth-wrapper auth-inner">
                     <h3>Sign up</h3>
                     <form noValidate onSubmit={this.onSubmit}>

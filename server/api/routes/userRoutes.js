@@ -106,4 +106,9 @@ router.post("/login", (req, res) => {
     });
 });
 
+
+// router.delete('/delete/:id', function (req, res) {
+//     res.send('user deleted')
+// })
+
 module.exports = router;

@@ -5,6 +5,8 @@ const connectDB = require("./database/connection");
 const passport = require("passport");
 const users = require("./api/routes/userRoutes");
 
+const posts = require("./api/routes/postRoutes");
+
 const app = express();
 
 var corsOptions = {
@@ -34,6 +36,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/posts", posts);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
