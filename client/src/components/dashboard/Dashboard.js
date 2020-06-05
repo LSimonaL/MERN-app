@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
@@ -21,8 +22,13 @@ class Dashboard extends Component {
                         </h4>
                         <button
                             onClick={this.onLogoutClick}
-                            className="btn btn-primary btn-form mt-3">Logout
+                            className="btn btn-primary btn-form mt-3 mr-3">Logout
                             
+                        </button>
+                        <button className="btn btn-primary btn-form mt-3">                       
+                            <Link to={"/"} style={{ color:"white" }}>
+                                Destinations
+                            </Link>
                         </button>
                     </div>
                 </div>

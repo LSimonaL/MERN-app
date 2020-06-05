@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
@@ -107,6 +107,9 @@ class Register extends Component {
                         </div>
 
                         <button type="submit" className="btn btn-primary btn-form btn-block">Sign up</button>
+                        <p className="mt-3">
+                            Already have an account? <Link to="/login">Login</Link>
+                        </p>
                     </form>
                 </div>
             </div>

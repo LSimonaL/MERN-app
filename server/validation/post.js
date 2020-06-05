@@ -4,16 +4,19 @@ const isEmpty = require("is-empty");
 module.exports = validatePostInput = data => {
     let errors = {};
 
-    let { title, body } = data;
+    let { city, body } = data;
     // Converting empty fields to empty string as validator function works only with strings
-    title = !isEmpty(title) ? title : "";
+    city = !isEmpty(city) ? city : "";
     body = !isEmpty(body) ? body : "";
 
-    if (Validator.isEmpty(title)) {
-        errors.title = "Title is required";
+    if (Validator.isEmpty(city)) {
+        errors.city = "City is required";
     }
     if (Validator.isEmpty(body)) {
         errors.body = "Description is required";
+    }
+    if (Validator.isEmpty(body)) {
+        errors.body = "Country is required";
     }
 
     return {

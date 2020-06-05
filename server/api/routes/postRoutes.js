@@ -87,10 +87,10 @@ router.patch(
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        const { title, body } = req.body;
+        const { city, body, country } = req.body;
         Post.findOneAndUpdate(
             { author, _id: req.params.id },
-            { $set: { title, body } },
+            { $set: { city, body, country } },
             { new: true }
         )
             .then(doc => res.status(200).json(doc))

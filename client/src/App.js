@@ -3,16 +3,27 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import { Provider } from "react-redux";
 import store from "./store";
+import { Provider } from "react-redux";
+
+//Style
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+//Components
 import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing"
+// import Landing from "./components/layout/Landing"
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+// import ListPost from "./components/posts/ListPost";
+// import Post from "./components/posts/Post";
+// import ViewPost from "./components/posts/ViewPost";
+
+//Containers
+import BlogContainer from "./containers/BlogContainer";
+// import ViewPostContainer from "./containers/ViewPostContainer";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -42,12 +53,13 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Switch>
-              <Route exact path="/" component={Landing}>
-                <Landing></Landing>
-              </Route>
+              <PrivateRoute exact path="/" component={BlogContainer} />
+              {/* <Landing></Landing> */}
               <Route path="/Login" component={Login}></Route>
               <Route path="/Register" component={Register}></Route>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              {/* <Route exact path="/blog/post/:id" component={ViewPostContainer} /> */}
+              <PrivateRoute exact path="/blog" component={BlogContainer} />
             </Switch>
           </div>
         </Router>
