@@ -13,19 +13,13 @@ function Gallery() {
         const apiRoot = "https://api.unsplash.com";
         const accessKey = process.env.ACCESS_KEY;
 
+
         axios
-            // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}`)
-            .get(`https://api.unsplash.com/photos/random?client_id=hpVYipif0W61bT9KNf5R9ZzOKBvpyom83VbcKaHhrzM&count=10`)
+            .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}`)
             .then(res => {
-                setImage([...images]);
+                // setImage([...images, ...res.data]);
                 console.log(res.data);
             })
-        // axios
-        //     .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}`)
-        //     .then(res => {
-        //         // setImage([...images, ...res.data]);
-        //         console.log(res.data);
-        //     })
     }
 
 
