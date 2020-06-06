@@ -6,10 +6,6 @@ const postSchema = new Schema({
         type: String,
         required: true
     },
-    body: {
-        type: String,
-        required: true
-    },
     country: {
         type: String,
         required: true
@@ -17,12 +13,11 @@ const postSchema = new Schema({
     author: {
         type: String,
         required: true
-    },
-    images: {
-        type: Array,
-        default: []
     }
-    // images: [{ id: String, imageLink: String }]
+    // images: {
+    //     type: Array,
+    //     default: []
+    // }
 
 });
 

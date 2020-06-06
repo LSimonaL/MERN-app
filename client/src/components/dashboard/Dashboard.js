@@ -22,12 +22,12 @@ class Dashboard extends Component {
                         </h4>
                         <button
                             onClick={this.onLogoutClick}
-                            className="btn btn-primary btn-form mt-3 mr-3">Logout
+                            className="btn btn-danger mt-3 mr-3">Logout
                             
                         </button>
                         <button className="btn btn-primary btn-form mt-3">                       
                             <Link to={"/"} style={{ color:"white" }}>
-                                Destinations
+                                View My Trips
                             </Link>
                         </button>
                     </div>

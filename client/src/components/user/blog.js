@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Nav, Button, Container, Form } from "react-bootstrap";
 import ListPost from "../posts/ListPost";
-// import "./blog.scss";
 
 const Blog = ({ posts, auth }) => {
     const inputRef = useRef(null);
@@ -23,8 +22,9 @@ const Blog = ({ posts, auth }) => {
 
     return (
         <React.Fragment>
-            <div className="mx-5">
-                <Nav className="justify-content-between mt-2 mb-2">
+            <div className="mx-5 mt-3">
+                <h3 className="text-center">MY TRIPS</h3>
+                <Nav className="justify-content-between">
                     {auth && (
                         <Link to="/blog/post/create">
                             <Button variant="light" className="styleBtn">
@@ -37,7 +37,6 @@ const Blog = ({ posts, auth }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Search by city.."
-                                style={{ height: 40 }}
                                 ref={inputRef}
                                 onChange={handleChange}
                             />
@@ -64,6 +63,8 @@ const Blog = ({ posts, auth }) => {
                         </Container>
                     )
                 )}
+
+
         </React.Fragment>
     );
 };

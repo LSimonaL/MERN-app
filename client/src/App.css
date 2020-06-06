@@ -46,12 +46,12 @@
   /* Blog */
   .styleBtn {
     cursor: pointer;
-    border-radius: 50% !important;
+    border-radius: 100% !important;
     box-shadow: 0px 1px 2px 1px #ccc;
     font-weight: bold !important;
     font-size: 20px !important;
     line-height: 24px !important;
-    padding: 8px 14px !important;
+    padding: 2px 13px 5px 13px !important;
  }
  
  .styleBtn:hover {
@@ -71,24 +71,25 @@
  }
  
  .deckStyle {
-    /* box-shadow: $cardShadowInitial; */
+    border: none !important;
+    box-shadow: 0px 2px 4px 0px #999;
  }
  
  .deckStyle:hover {
     transition: 0.4s;
-    /* box-shadow($cardShadowHover); */
- }
+    box-shadow: 0px 2px 4px 0px #999;
+
+   }
  
  /*Post Post*/
  
  .postCover {
-    /* background: $themeColor;
-    color: $light; */
+    color: #34495e;
  }
  
  
  /*Post View*/
- .viewPost {
+ /* .viewPost {
     overflow-wrap: break-word;
  }
  
@@ -97,8 +98,8 @@
  }
  
  .footerStyle {
-    /* color: $subtitleColor; */
- }
+    color:  #555;
+ } */
 
 
  /*Post Create Form*/

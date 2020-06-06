@@ -17,9 +17,8 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-// import ListPost from "./components/posts/ListPost";
-// import Post from "./components/posts/Post";
-// import ViewPost from "./components/posts/ViewPost";
+import CreatePost from "./components/posts/CreatePost";
+import Gallery from "./components/unsplash-gallery/Gallery"
 
 //Containers
 import BlogContainer from "./containers/BlogContainer";
@@ -58,8 +57,9 @@ class App extends Component {
               <Route path="/Login" component={Login}></Route>
               <Route path="/Register" component={Register}></Route>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              {/* <Route exact path="/blog/post/:id" component={ViewPostContainer} /> */}
+              <PrivateRoute exact path="/blog/post/create" component={CreatePost} />
               <PrivateRoute exact path="/blog" component={BlogContainer} />
+              <PrivateRoute exact path="/gallery" component={Gallery} />
             </Switch>
           </div>
         </Router>
