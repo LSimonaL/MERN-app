@@ -56,10 +56,10 @@ class App extends Component {
               {/* <Landing></Landing> */}
               <Route path="/Login" component={Login}></Route>
               <Route path="/Register" component={Register}></Route>
+              <Route exact path="/gallery" component={Gallery} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/blog/post/create" component={CreatePost} />
               <PrivateRoute exact path="/blog" component={BlogContainer} />
-              <PrivateRoute exact path="/gallery" component={Gallery} />
             </Switch>
           </div>
         </Router>

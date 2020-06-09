@@ -22,12 +22,12 @@ const Blog = ({ posts, auth }) => {
 
     return (
         <React.Fragment>
-            <div className="mx-5 mt-3">
+            <div className="mx-5 mt-4">
                 <h3 className="text-center">MY TRIPS</h3>
-                <Nav className="justify-content-between">
+                <Nav className="justify-content-between container pl-4 pr-3">
                     {auth && (
                         <Link to="/blog/post/create">
-                            <Button variant="light" className="styleBtn">
+                            <Button variant="light" className="createTripBtn">
                                 +
                             </Button>
                         </Link>
@@ -63,7 +63,6 @@ const Blog = ({ posts, auth }) => {
                         </Container>
                     )
                 )}
-
 
         </React.Fragment>
     );

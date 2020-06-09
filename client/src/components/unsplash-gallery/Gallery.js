@@ -9,13 +9,13 @@ function Gallery() {
         fetchImages();
     }, [])
 
-    const fetchImages = (count = 20) => {
+    const fetchImages = (count = 21) => {
         const apiRoot = "https://api.unsplash.com";
         const accessKey = process.env.REACT_APP_ACCESS_KEY;
 
 
         axios
-            .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}&query=cities`)
+            .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}&query=italy`)
             .then(res => {
                 setImage([...images, ...res.data]);
                 console.log(res.data);
@@ -26,8 +26,7 @@ function Gallery() {
     return (
         <div>
             <h3 className="text-center">Discover</h3>
-            <div>
-
+            <div className="container d-flex">
                 <div
                     dataLength={images.length}
                     next={fetchImages}

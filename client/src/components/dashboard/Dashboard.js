@@ -17,9 +17,9 @@ class Dashboard extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center">
-                        <h4>
+                        <h3>
                             <b>Hey there,</b> {user.name.split(" ")[0]}
-                        </h4>
+                        </h3>
                         <button
                             onClick={this.onLogoutClick}
                             className="btn btn-danger mt-3 mr-3">Logout
