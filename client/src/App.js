@@ -20,9 +20,10 @@ import Dashboard from "./components/dashboard/Dashboard";
 import CreatePost from "./components/posts/CreatePost";
 import Gallery from "./components/unsplash-gallery/Gallery"
 
+// import { Test } from "./components/test";
+
 //Containers
 import BlogContainer from "./containers/BlogContainer";
-// import ViewPostContainer from "./containers/ViewPostContainer";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,13 +55,15 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/" component={BlogContainer} />
               {/* <Landing></Landing> */}
-              <Route path="/Login" component={Login}></Route>
-              <Route path="/Register" component={Register}></Route>
+              <Route exact path="/Login" component={Login}></Route>
+              <Route exact path="/Register" component={Register}></Route>
               <Route exact path="/gallery" component={Gallery} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/blog/post/create" component={CreatePost} />
               <PrivateRoute exact path="/blog" component={BlogContainer} />
+              {/* <Route exact path="/test"/> */}
             </Switch>
+            {/* <Test name="there"></Test> */}
           </div>
         </Router>
       </Provider>

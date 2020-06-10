@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const ListPost = ({ posts }) => {
     return (
-        // <div></div>
         <div className="grid-container justify-content-center">
             {posts.map(post => (
                 <Link key={post._id}>

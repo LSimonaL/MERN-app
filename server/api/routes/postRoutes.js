@@ -7,7 +7,7 @@ const validatePostInput = require("../../validation/post");
 //post model
 const Post = require("../../database/models/postModel");
 
-
+//Get a list of all the posts
 router.get(
     "/",
     passport.authenticate("jwt", { session: false }),
@@ -22,22 +22,7 @@ router.get(
     }
 );
 
-// router.get("/post/:id", (req, res) => {
-//     Post.find({ _id: req.params.id })
-//         .then(post => res.status(200).json(post))
-//         .catch(err => res.status(400).json({ id: "Error fetching post by id" }));
-// });
-
-// router.get("/author/:author", (req, res) => {
-//     Post.find({ author: req.params.author })
-//         .then(posts => res.status(200).json(posts))
-//         .catch(err =>
-//             res
-//                 .status(400)
-//                 .json({ author: "Error fetching posts of specific author" })
-//         );
-// });
-
+//create a new post
 router.post(
     "/create",
     passport.authenticate("jwt", { session: false }),
@@ -59,25 +44,7 @@ router.post(
     }
 );
 
-// router.post(
-//     "/create",
-//     passport.authenticate("jwt", { session: false }),
-//     (req, res) => {
-//         const author = req.user.name;
-//         const post = req.body;
-//         const { errors, isValid } = validatePostInput(post);
-//         if (!isValid) {
-//             return res.status(400).json(errors);
-//         }
-//         post.author = author;
-//         const newPost = new Post(post);
-//         newPost
-//             .save()
-//             .then(doc => res.json(doc))
-//             .catch(err => console.log({ create: "Error creating new post" }));
-//     }
-// );
-
+//Update a specific post
 router.patch(
     "/update/:id",
     passport.authenticate("jwt", { session: false }),
@@ -100,6 +67,7 @@ router.patch(
     }
 );
 
+//Delete a post
 router.delete(
     "/delete/:id",
     passport.authenticate("jwt", { session: false }),
