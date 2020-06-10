@@ -1,22 +1,26 @@
 const express = require("express");
+const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./database/connection");
 const passport = require("passport");
 const users = require("./api/routes/userRoutes");
-
 const posts = require("./api/routes/postRoutes");
-
-const app = express();
+const path = require("path");
 
 var corsOptions = {
     origin: "http://localhost:8081"
 };
 
+
+app.use(express.static(path.join(__dirname, "client/build")));
+
+
 //connection database
 connectDB();
 
 app.use(cors(corsOptions));
+
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -28,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to my app." });
 });
+
 
 
 // Passport middleware
